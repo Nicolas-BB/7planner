@@ -1,0 +1,31 @@
+.div {
+    color: var(--text-color1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: fit-content;
+    font: bold 22px Inter, sans-serif;
+}
+
+.dayDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.btnDiv {
+    display: flex;
+    gap: 16px;
+}
+
+.btnDiv img {
+    background-color: var(--color1);
+    border-radius: 100px;
+    padding: 6px;
+}
