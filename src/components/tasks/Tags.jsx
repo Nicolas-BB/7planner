@@ -14,7 +14,6 @@ export default function Tags() {
                 ))}
             </div>
                 <img src={plusIcon} alt="Ícone de adição" className={styles.img} />
-            
         </>
     )
 }
