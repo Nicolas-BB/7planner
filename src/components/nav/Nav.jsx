@@ -1,7 +1,7 @@
 import { PrimaryBtn } from "../buttons/Buttons.jsx"
 import styles from "./nav.module.css"
 import logo from "../../assets/logo.png"
-import icon from "../../assets/plusIcon.png"
+import plusIcon from "../../assets/plusIcon.png"
 import Menu from "../menu/Menu.jsx"
 
 export default function Nav() {
@@ -9,7 +9,7 @@ export default function Nav() {
         <nav className={styles.nav}>
             <img src={logo} alt="Logo" className={styles.img} />
             <Menu />
-            <PrimaryBtn><img src={icon} alt="Ícone de adição" />Adicionar</PrimaryBtn>
+            <PrimaryBtn><img src={plusIcon} alt="Ícone de adição" />Adicionar</PrimaryBtn>
         </nav>
     )
 }

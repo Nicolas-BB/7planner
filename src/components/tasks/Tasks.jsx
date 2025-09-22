@@ -12,7 +12,7 @@ export default function Tasks() {
                 <p>X tarefas</p>
             </div>
             <hr />
-            <div>
+            <div className={styles.tagsDiv}>
                 <Tags />
             </div>
         </div>

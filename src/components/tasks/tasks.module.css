@@ -22,3 +22,8 @@
     flex-direction: column;
     gap: 6px;
 }
+
+.tagsDiv {
+    display: flex;
+    gap: 16px;
+}

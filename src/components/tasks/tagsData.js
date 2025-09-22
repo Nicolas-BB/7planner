@@ -1,4 +1,4 @@
-let tagsData = [
+export let tagsData = [
     {
         "icon": "🏃",
         "text": "Correr",

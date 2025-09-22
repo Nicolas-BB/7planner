@@ -1,15 +1,20 @@
-import tagsData from "./tagsData.js"
+import { tagsData } from "./tagsData.js"
 import styles from "./tags.module.css"
+import plusIcon from "../../assets/plusIcon.png"
 
 export default function Tags() {
     return (
         <>
-            {tagsData.map((item) => (
-                <div className={styles.div}>
-                    <span className={styles.icon}>{item.icon.value}</span>
-                    <span className={styles.text}>{item.text.value}</span>
-                </div>
-            ))}
+            <div className={styles.tagsContainer}>
+                {tagsData.map((item) => (
+                    <div className={styles.div}>
+                        <span className={styles.icon}>{item.icon}</span>
+                        <span className={styles.text}>{item.text}</span>
+                    </div>
+                ))}
+            </div>
+                <img src={plusIcon} alt="Ícone de adição" className={styles.img} />
+            
         </>
     )
 }
