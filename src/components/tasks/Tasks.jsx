@@ -2,7 +2,12 @@ import styles from "./tasks.module.css"
 import Tags from "./Tags.jsx"
 import TaskList from "./TaskList.jsx"
 
-export default function Tasks() {
+export default function Tasks({ selectedDay, setSelectedDay }) {
+
+    // Filter
+    [3, 2, 2, 2,5,5,6,6] 
+    // retone apenas os => 2
+
     return (
         <div className={styles.container}>
             <div className={styles.headContainer}>
@@ -16,9 +21,9 @@ export default function Tasks() {
             <div className={styles.tagsDiv}>
                 <Tags />
             </div>
-            <div className={styles.tasksDiv}>
-                <TaskList />
-            </div>
+            {/* <div className={styles.tasksDiv}> */}
+            <TaskList />
+            {/* </div> */}
         </div>
     )
 }

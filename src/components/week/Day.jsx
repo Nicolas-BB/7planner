@@ -1,18 +1,11 @@
-import { useState } from "react"
-import { dayData } from "./dayData.js"
 import styles from "./day.module.css"
 
-export default function Day() {
-    const [id, setId] = useState(0)
+export default function Day({ dayWeek, dayNum, dayWeather, id, selectedDay, setId }) {
     return (
-        <>
-            {dayData.map((day, i) => (
-                <div key={i} className={` ${styles.day} ${id === i && styles.daySelected}` } onClick={() => { setId(i); console.log('fuck you', i, ' ', id) }} >
-                    <p>{day.dayWeek}</p>
-                    <p className={styles.dayNum}>{day.dayNum}</p>
-                    <p>{day.dayWeather}</p>
-                </div>
-            ))}
-        </>
+        <div key={id} className={`${styles.day} ${id === selectedDay && styles.daySelected}`} onClick={() => setId(id)} >
+            <p>{dayWeek}</p>
+            <p className={styles.dayNum}>{dayNum}</p>
+            <p>{dayWeather}</p>
+        </div>
     )
 }
