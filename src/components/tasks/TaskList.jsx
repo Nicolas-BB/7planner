@@ -4,13 +4,11 @@ import styles from "./taskList.module.css"
 export default function TaskList() {
     return (
         <div className={styles.taskContainer}>
-            {tasksData.map((item) => (
-                <>
-                    <div className={styles.taskDiv}>
-                        <p className={styles.title}>{item.title}</p>
-                        <span className={styles.hour}>{item.hour}</span>
-                    </div>
-                </>
+            {tasksData.map((item, i) => (
+                <div className={styles.taskDiv} key={i} >
+                    <p className={styles.title}>{item.title}</p>
+                    <span className={styles.hour}>{item.hour}</span>
+                </div>
             ))}
         </div>
     )

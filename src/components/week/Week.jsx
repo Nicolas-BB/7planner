@@ -16,12 +16,6 @@ export default function Week() {
                 </div>
                 <div className={styles.dayDiv}>
                     <Day />
-                    <Day />
-                    <Day />
-                    <Day />
-                    <Day />
-                    <Day />
-                    <Day />
                 </div>
             </div>
         </>

@@ -6,8 +6,8 @@ export default function Tags() {
     return (
         <>
             <div className={styles.tagsContainer}>
-                {tagsData.map((item) => (
-                    <div className={styles.div}>
+                {tagsData.map((item, i) => (
+                    <div className={styles.div} key={i} >
                         <span className={styles.icon}>{item.icon}</span>
                         <span className={styles.text}>{item.text}</span>
                     </div>
