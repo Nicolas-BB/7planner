@@ -1,5 +1,6 @@
 import styles from "./tasks.module.css"
 import Tags from "./Tags.jsx"
+import TaskList from "./TaskList.jsx"
 
 export default function Tasks() {
     return (
@@ -14,6 +15,9 @@ export default function Tasks() {
             <hr />
             <div className={styles.tagsDiv}>
                 <Tags />
+            </div>
+            <div className={styles.tasksDiv}>
+                <TaskList />
             </div>
         </div>
     )

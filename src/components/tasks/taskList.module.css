@@ -1,0 +1,21 @@
+.taskDiv {
+    padding: 16px;
+    background-color: var(--color1);
+    border-radius: 16px;
+}
+
+.title {
+    color: var(--text-color1);
+    font: bold 26px Inter, sans-serif;
+}
+
+.hour {
+    font: bold 22px Inter, sans-serif;
+    color: var(--text-color2);
+}
+
+.taskContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
