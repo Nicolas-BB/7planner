@@ -7,9 +7,9 @@ import Menu from "./Menu.jsx"
 export default function Nav() {
     return (
         <nav className={styles.nav}>
-            <img src={logo} alt="Logo" className={styles.img} />
+            <img src={logo} alt="Logo" className={styles.logo} />
             <Menu />
-            <PrimaryBtn><img src={plusIcon} alt="Ícone de adição" />Adicionar</PrimaryBtn>
+            <PrimaryBtn><img src={plusIcon} alt="Ícone de adição" className={styles.img} />Adicionar</PrimaryBtn>
         </nav>
     )
 }

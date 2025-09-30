@@ -5,7 +5,7 @@ import { tasksData } from "./tasksData"
 import { tagsData } from "./tagsData.js"
 import plusIcon from "../../assets/plusIcon.png"
 
-export default function TasksList({ selectedDay, setSelectedDay }) {
+export default function TasksList() {
     return (
         <div className={styles.container}>
             <div className={styles.headContainer}>
