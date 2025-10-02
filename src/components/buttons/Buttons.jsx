@@ -1,4 +1,4 @@
-import styles from "./buttons.module.css"
+import styles from "../../styles/buttons.module.css"
 
 export function PrimaryBtn({ children }) {
     return (
