@@ -1,12 +1,12 @@
 import styles from "../../styles/buttons.module.css"
 
-export function PrimaryBtn({ children }) {
+export function PrimaryBtn({ click, children }) {
     return (
-        <button className={styles.primaryBtn}>{children}</button>
+        <button className={styles.primaryBtn} onClick={click}>{children}</button>
     )
 }
 
-export function SecondaryBtn({ children }) {
+export function SecondaryBtn({ click, children }) {
     return (
         <button className={styles.secondaryBtn}>{children}</button>
     )
