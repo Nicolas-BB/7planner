@@ -4,7 +4,7 @@ import Day from "./Day.jsx"
 import styles from "../../../../styles/system/week.module.css"
 import { daysData } from "./daysData.js"
 
-export default function Week() {
+export default function Week({ selection, setSelection }) {
     return (
         <div className={styles.container}>
             <div className={styles.div}>
@@ -19,6 +19,8 @@ export default function Week() {
                     <Day
                         key={i}
                         {...data}
+                        click={() => setSelection(i)}
+                        selected={i === selection}
                     />
                 ))}
             </div>

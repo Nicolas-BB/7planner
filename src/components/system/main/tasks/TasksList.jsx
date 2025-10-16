@@ -5,7 +5,7 @@ import { tasksData } from "./tasksData.js"
 import { tagsData } from "./tagsData.js"
 import plusIcon from "../../../../assets/plusIcon.png"
 
-export default function TasksList() {
+export default function TasksList({ selection }) {
     return (
         <div className={styles.container}>
             <div className={styles.headContainer}>
@@ -17,18 +17,18 @@ export default function TasksList() {
             </div>
             <hr />
             <div className={styles.tagsDiv}>
-                {tagsData.map((data, i) => (
+                {tagsData.map((tag, i) => (
                     <Tag
                         key={i}
-                        {...data}
+                        {...tag}
                     />
-                    ))}
-                    <img src={plusIcon} alt="Ícone de adição" className={styles.img} />
+                ))}
+                <img src={plusIcon} alt="Ícone de adição" className={styles.img} />
             </div>
-            {tasksData.map((data, i) => (
+            {tasksData[selection]?.map((task, i) => (
                 <Task
                     key={i}
-                    {...data}
+                    {...task}
                 />
             ))}
         </div>
