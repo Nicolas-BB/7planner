@@ -6,13 +6,12 @@
 
 .li {
     border-radius: 8px;
-    padding: 8px 16px;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.selected { 
+.selected {
     background-color: var(--primary-color-2);
 }
 
@@ -22,7 +21,12 @@
 }
 
 .a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
     text-decoration: none;
     color: var(--text-color1);
     font: bold 16px Inter, sans-serif;
+    padding: 8px 16px;
 }

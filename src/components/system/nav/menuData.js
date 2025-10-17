@@ -11,7 +11,7 @@ export const menuData = [
             "alt": "Ícone casa"
         },
         "a": {
-            "href": "index.html",
+            "href": "/",
             "value": "Início"
         },
     },
@@ -22,7 +22,7 @@ export const menuData = [
             "alt": "Ícone calendário"
         },
         "a": {
-            "href": "calendar.html",
+            "href": "/calendar",
             "value": "Calendário"
         },
     },
@@ -33,7 +33,7 @@ export const menuData = [
             "alt": "Ícone assistente"
         },
         "a": {
-            "href": "asssitent.html",
+            "href": "/assistant",
             "value": "Assistente"
         },
     },
@@ -44,7 +44,7 @@ export const menuData = [
             "alt": "Ícone perfil"
         },
         "a": {
-            "href": "profile.html",
+            "href": "/profile",
             "value": "Perfil"
         },
     }

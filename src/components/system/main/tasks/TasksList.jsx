@@ -6,6 +6,8 @@ import { tagsData } from "./tagsData.js"
 import plusIcon from "../../../../assets/plusIcon.png"
 
 export default function TasksList({ selection }) {
+    const tasksQtd = tasksData[selection]?.length == 1 ? '1 tarefa' : tasksData[selection]?.length == (0 || undefined) ? 'Nenhuma tarefa' : `${tasksData[selection]?.length} tarefas`
+
     return (
         <div className={styles.container}>
             <div className={styles.headContainer}>
@@ -13,7 +15,7 @@ export default function TasksList({ selection }) {
                     <p>Suas tarefas de hoje</p>
                     <a href="#">Ver todas</a>
                 </div>
-                <p>X tarefas</p>
+                <p>{tasksQtd}</p>
             </div>
             <hr />
             <div className={styles.tagsDiv}>
