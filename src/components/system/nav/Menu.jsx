@@ -6,7 +6,7 @@ import { useRouterState } from "@tanstack/react-router";
 export default function Menu() {
     const [id, setId] = useState(0)
     const { location } = useRouterState()
-    console.log(location.pathname)
+    
     return (
         <ul className={styles.ul}>
             {menuData.map((item) => (

@@ -6,7 +6,6 @@ import { PrimaryBtn } from "../../buttons/Buttons.jsx"
 import { useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import CreateTask from './CreateTask.jsx'
-import { generateTip } from "../../../api/gemini"
 
 export default function Nav() {
     const [modal, setModal] = useState(false)
