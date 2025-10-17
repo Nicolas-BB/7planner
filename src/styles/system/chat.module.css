@@ -63,11 +63,14 @@
     background-color: var(--primary-color-1);
 }
 
+.modelMsg li {
+    margin-left: 16px;
+}
+
 .modelMsg {
     width: fit-content;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     padding: 8px 16px;
     border-radius: 16px;
@@ -86,4 +89,22 @@
 
 .modelDiv {
     align-self: flex-start;
+}
+
+.loading {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 100%;
+    animation: loop .5s infinite ease-in-out alternate;
+}
+
+@keyframes loop {
+    from {
+        transform: translateX(-10px);
+    }
+
+    to {
+        transform: translateX(10px);
+    }
 }

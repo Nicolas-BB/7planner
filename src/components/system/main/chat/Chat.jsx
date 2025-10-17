@@ -5,14 +5,20 @@ import Markdown from 'react-markdown'
 
 export default function Chat() {
     const [chat, setChat] = useState({ user: '', model: '' })
+    const [isLoading, setIsLoading] = useState(false)
 
     async function getTip(message) {
+        setIsLoading(true)
+
         try {
             const modelMsg = await generateTip(message)
             setChat(chat => ({ ...chat, model: modelMsg }))
         }
         catch {
             setChat(chat => ({ ...chat, model: 'Ocorreu um erro' }))
+        }
+        finally {
+            setIsLoading(false)
         }
     }
 
@@ -38,12 +44,17 @@ export default function Chat() {
                     </div>
                 }
                 {
-                    chat.model.length > 0 &&
+                    (chat.model.length > 0 || isLoading) &&
                     <div className={styles.modelDiv}>
                         <span>Assistente</span>
                         <span className={styles.modelMsg}>
-                            <Markdown>{chat.model}</Markdown>
+                            {
+                                isLoading
+                                    ? <div className={styles.loading}></div>
+                                    : <Markdown>{chat.model}</Markdown>
+                            }
                         </span>
+                        {/* <div className={styles.loading}></div> */}
                     </div>
                 }
             </div>
