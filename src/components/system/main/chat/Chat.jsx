@@ -54,7 +54,6 @@ export default function Chat() {
                                     : <Markdown>{chat.model}</Markdown>
                             }
                         </span>
-                        {/* <div className={styles.loading}></div> */}
                     </div>
                 }
             </div>
@@ -64,14 +63,3 @@ export default function Chat() {
         </div>
     )
 }
-
-/*
-function submit(formData) {
-    const newIngredient = formData.get("ingredient")
-
-    if (newIngredient.trim().length > 0) {
-        setIngredients(ingredients => [...ingredients, newIngredient.trim()])
-        inputRef.current.focus()
-    }
-}
-*/
