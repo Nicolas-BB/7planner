@@ -2,6 +2,11 @@
     padding: 16px;
     background-color: var(--color1);
     border-radius: 16px;
+    transition: transform 0.2s ease;
+}
+
+.taskDiv:hover {
+    transform: scale(1.01);
 }
 
 .title {

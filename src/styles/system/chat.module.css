@@ -20,6 +20,8 @@
     flex-direction: column;
     gap: 16px;
     padding: 16px;
+    overflow-y: scroll;
+    scrollbar-color: hsl(0, 0%, 30%) transparent;
 }
 
 .form {

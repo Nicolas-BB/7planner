@@ -12,6 +12,11 @@
     padding: 22px;
     border-radius: 16px;
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.day:hover {
+    transform: scale(1.05);
 }
 
 .dayNum {
@@ -20,4 +25,6 @@
 
 .daySelected {
     background-color: var(--primary-color-1);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 16px var(--primary-color-1);
 }

@@ -5,32 +5,32 @@ export let daysData = [
         dayWeather: "🌞"
     },
     {
-        dayWeek: "D",
+        dayWeek: "S",
         dayNum: "2",
         dayWeather: "🌞"
     },
     {
-        dayWeek: "D",
+        dayWeek: "T",
         dayNum: "3",
         dayWeather: "🌞"
     },
     {
-        dayWeek: "D",
+        dayWeek: "Q",
         dayNum: "4",
         dayWeather: "🌞"
     },
     {
-        dayWeek: "D",
+        dayWeek: "Q",
         dayNum: "5",
         dayWeather: "🌞"
     },
     {
-        dayWeek: "D",
+        dayWeek: "S",
         dayNum: "6",
         dayWeather: "🌞"
     },
     {
-        dayWeek: "D",
+        dayWeek: "S",
         dayNum: "7",
         dayWeather: "🌞"
     },
