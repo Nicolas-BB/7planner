@@ -6,7 +6,7 @@ import { tagsData } from "./tagsData.js"
 import plusIcon from "../../../../assets/plusIcon.png"
 
 export default function TasksList({ selection }) {
-    const tasksQtd = tasksData[selection]?.length == 1 ? '1 tarefa' : tasksData[selection]?.length == (0 || undefined) ? 'Nenhuma tarefa' : `${tasksData[selection]?.length} tarefas`
+    const tasksQtd = tasksData.filter(task => task.day == selection).length
 
     return (
         <div className={styles.container}>
@@ -15,7 +15,7 @@ export default function TasksList({ selection }) {
                     <p>Suas tarefas de hoje</p>
                     <a href="#">Ver todas</a>
                 </div>
-                <p>{tasksQtd}</p>
+                <p>{tasksQtd == 1 ? '1 tarefa' : tasksQtd == 0 || undefined ? 'Nenhuma tarefa' : `${tasksQtd} tarefas`}</p>
             </div>
             <hr />
             {/*
@@ -29,8 +29,8 @@ export default function TasksList({ selection }) {
                 <img src={plusIcon} alt="Ícone de adição" className={styles.img} />
             </div>
             */}
-            {tasksData.map((task, i) => (task.day == (selection + 1) ?
-                <Task
+            {tasksData.map((task, i) => (task.day == (selection)
+                ? <Task
                     key={i}
                     {...task}
                 />

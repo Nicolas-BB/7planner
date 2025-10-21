@@ -19,8 +19,8 @@ export default function Week({ selection, setSelection }) {
                     <Day
                         key={i}
                         {...data}
-                        click={() => setSelection(i)}
-                        selected={i === selection}
+                        click={() => setSelection(data.dayNum)}
+                        selected={data.dayNum === selection}
                     />
                 ))}
             </div>
