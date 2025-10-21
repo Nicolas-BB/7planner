@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as LandingRouteImport } from './routes/landing'
 import { Route as _dashboardRouteRouteImport } from './routes/__dashboard/route'
 import { Route as _dashboardIndexRouteImport } from './routes/__dashboard/index'
+import { Route as _dashboardProfileRouteImport } from './routes/__dashboard/profile'
 import { Route as _dashboardAssistantRouteImport } from './routes/__dashboard/assistant'
 
 const LandingRoute = LandingRouteImport.update({
@@ -28,6 +29,11 @@ const _dashboardIndexRoute = _dashboardIndexRouteImport.update({
   path: '/',
   getParentRoute: () => _dashboardRouteRoute,
 } as any)
+const _dashboardProfileRoute = _dashboardProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => _dashboardRouteRoute,
+} as any)
 const _dashboardAssistantRoute = _dashboardAssistantRouteImport.update({
   id: '/assistant',
   path: '/assistant',
@@ -37,11 +43,13 @@ const _dashboardAssistantRoute = _dashboardAssistantRouteImport.update({
 export interface FileRoutesByFullPath {
   '/landing': typeof LandingRoute
   '/assistant': typeof _dashboardAssistantRoute
+  '/profile': typeof _dashboardProfileRoute
   '/': typeof _dashboardIndexRoute
 }
 export interface FileRoutesByTo {
   '/landing': typeof LandingRoute
   '/assistant': typeof _dashboardAssistantRoute
+  '/profile': typeof _dashboardProfileRoute
   '/': typeof _dashboardIndexRoute
 }
 export interface FileRoutesById {
@@ -49,18 +57,20 @@ export interface FileRoutesById {
   '/__dashboard': typeof _dashboardRouteRouteWithChildren
   '/landing': typeof LandingRoute
   '/__dashboard/assistant': typeof _dashboardAssistantRoute
+  '/__dashboard/profile': typeof _dashboardProfileRoute
   '/__dashboard/': typeof _dashboardIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/landing' | '/assistant' | '/'
+  fullPaths: '/landing' | '/assistant' | '/profile' | '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/landing' | '/assistant' | '/'
+  to: '/landing' | '/assistant' | '/profile' | '/'
   id:
     | '__root__'
     | '/__dashboard'
     | '/landing'
     | '/__dashboard/assistant'
+    | '/__dashboard/profile'
     | '/__dashboard/'
   fileRoutesById: FileRoutesById
 }
@@ -92,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof _dashboardIndexRouteImport
       parentRoute: typeof _dashboardRouteRoute
     }
+    '/__dashboard/profile': {
+      id: '/__dashboard/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof _dashboardProfileRouteImport
+      parentRoute: typeof _dashboardRouteRoute
+    }
     '/__dashboard/assistant': {
       id: '/__dashboard/assistant'
       path: '/assistant'
@@ -104,11 +121,13 @@ declare module '@tanstack/react-router' {
 
 interface _dashboardRouteRouteChildren {
   _dashboardAssistantRoute: typeof _dashboardAssistantRoute
+  _dashboardProfileRoute: typeof _dashboardProfileRoute
   _dashboardIndexRoute: typeof _dashboardIndexRoute
 }
 
 const _dashboardRouteRouteChildren: _dashboardRouteRouteChildren = {
   _dashboardAssistantRoute: _dashboardAssistantRoute,
+  _dashboardProfileRoute: _dashboardProfileRoute,
   _dashboardIndexRoute: _dashboardIndexRoute,
 }
 

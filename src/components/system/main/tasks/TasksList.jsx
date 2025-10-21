@@ -18,6 +18,7 @@ export default function TasksList({ selection }) {
                 <p>{tasksQtd}</p>
             </div>
             <hr />
+            {/*
             <div className={styles.tagsDiv}>
                 {tagsData.map((tag, i) => (
                     <Tag
@@ -27,11 +28,13 @@ export default function TasksList({ selection }) {
                 ))}
                 <img src={plusIcon} alt="Ícone de adição" className={styles.img} />
             </div>
-            {tasksData[selection]?.map((task, i) => (
+            */}
+            {tasksData.map((task, i) => (task.day == (selection + 1) ?
                 <Task
                     key={i}
                     {...task}
                 />
+                : null
             ))}
         </div>
     )

@@ -8,6 +8,6 @@ export function PrimaryBtn({ click, children }) {
 
 export function SecondaryBtn({ click, children }) {
     return (
-        <button className={styles.secondaryBtn}>{children}</button>
+        <button className={styles.secondaryBtn} onClick={click} >{children}</button>
     )
 }
