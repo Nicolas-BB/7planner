@@ -36,21 +36,16 @@
 }
 
 .portal input {
+    all: unset;
     font-size: 16px;
-    padding: 8px;
+    padding: 8px 16px;
     border-radius: 32px;
+    border: none;
+    background-color: white;
+    color: black;
 }
 
-.portal h2 {
-    width: 9ch;
-    letter-spacing: 0.1ch;
-    text-wrap: nowrap;
-    overflow: hidden;
-    animation: typing 1.5s steps(9) infinite alternate-reverse;
-}
-
-@keyframes typing {
-    from {
-        width: 0ch;
-    }
+.validName {
+    color: rgb(255, 110, 110);
+    text-align: center;
 }

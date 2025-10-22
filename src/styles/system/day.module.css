@@ -26,5 +26,5 @@
 .daySelected {
     background-color: var(--primary-color-1);
     transform: scale(1.05);
-    box-shadow: 0px 0px 16px var(--primary-color-1);
+    /* box-shadow: 0px 0px 16px var(--primary-color-1); */
 }

@@ -1,12 +1,21 @@
 import { PrimaryBtn } from '../../buttons/Buttons.jsx'
 import { tasksData } from '../main/tasks/tasksData.js'
 import styles from '../../../styles/system/createTask.module.css'
+import { useState } from 'react'
 
 export default function CreateTask({ modalRef }) {
+    const [validName, setValidName] = useState(true)
+
     function submit(formData) {
         const name = formData.get('name')
         const time = formData.get('time')
         const day = parseInt(formData.get('day'))
+
+        if (name.length == 0) {
+            return (
+                setValidName(false)
+            )
+        }
         const newTask = { title: name, hour: time, day: day }
 
         tasksData.push(newTask)
@@ -23,6 +32,7 @@ export default function CreateTask({ modalRef }) {
                     <label htmlFor="name">
                         Nome
                         <input type="text" name="name" id="name" placeholder='Estudar' autoComplete='off' />
+                        {validName ? null : <span className={styles.validName}>Insira um nome válido!</span>}
                     </label>
                     <label htmlFor="hour">
                         Horário

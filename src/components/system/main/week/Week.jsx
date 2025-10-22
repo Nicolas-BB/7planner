@@ -5,6 +5,14 @@ import styles from "../../../../styles/system/week.module.css"
 import { daysData } from "./daysData.js"
 
 export default function Week({ selection, setSelection }) {
+    const date = new Date()
+    const weekDay = date.getDay()
+    const dayNum = date.getDate()
+
+    console.log(date)
+    console.log(weekDay)
+    console.log(dayNum)
+
     return (
         <div className={styles.container}>
             <div className={styles.div}>
