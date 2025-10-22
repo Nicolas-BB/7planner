@@ -62,14 +62,18 @@
     border-color: white;
 }
 
-.tagsSection, .weekSection, .geminiSection, .downloadSection {
+.tagsSection,
+.weekSection,
+.geminiSection,
+.downloadSection {
     padding: 100px 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.tagsSection, .geminiSection {
+.tagsSection,
+.geminiSection {
     background-color: var(--color2);
 }
 

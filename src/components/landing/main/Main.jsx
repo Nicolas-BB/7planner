@@ -19,7 +19,7 @@ export default function Main() {
                     </div>
                 </div>
             </section>
-                <hr />
+            <hr />
             <section className={styles.tagsSection}>
                 <div className={styles.infoDiv}>
                     <h2>Adicione #tags para maior controle</h2>
