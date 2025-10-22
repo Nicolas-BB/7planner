@@ -32,34 +32,36 @@ export default function Chat() {
     }
 
     return (
-        <div className={styles.div}>
-            <div className={styles.messages}>
-                {
-                    chat.user.length > 0 &&
-                    <div className={styles.userDiv}>
-                        <span>Você</span>
-                        <span className={styles.userMsg}>
-                            {chat.user}
-                        </span>
-                    </div>
-                }
-                {
-                    (chat.model.length > 0 || isLoading) &&
-                    <div className={styles.modelDiv}>
-                        <span>Assistente</span>
-                        <span className={styles.modelMsg}>
-                            {
-                                isLoading
-                                    ? <div className={styles.loading}></div>
-                                    : <Markdown>{chat.model}</Markdown>
-                            }
-                        </span>
-                    </div>
-                }
+        <div className={styles.container}>
+            <div className={styles.div}>
+                <div className={styles.messages}>
+                    {
+                        chat.user.length > 0 &&
+                        <div className={styles.userDiv}>
+                            <span>Você</span>
+                            <span className={styles.userMsg}>
+                                {chat.user}
+                            </span>
+                        </div>
+                    }
+                    {
+                        (chat.model.length > 0 || isLoading) &&
+                        <div className={styles.modelDiv}>
+                            <span>Assistente</span>
+                            <span className={styles.modelMsg}>
+                                {
+                                    isLoading
+                                        ? <div className={styles.loading}></div>
+                                        : <Markdown>{chat.model}</Markdown>
+                                }
+                            </span>
+                        </div>
+                    }
+                </div>
+                <form className={styles.form} action={submit}>
+                    <input type="text" name="message" id="message" placeholder="Pergunte ao assistente..." autoComplete='off' />
+                </form>
             </div>
-            <form className={styles.form} action={submit}>
-                <input type="text" name="message" id="message" placeholder="Pergunte ao assistente..." autoComplete='off' />
-            </form>
         </div>
     )
 }
