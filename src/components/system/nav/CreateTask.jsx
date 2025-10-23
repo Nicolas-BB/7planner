@@ -2,9 +2,12 @@ import { PrimaryBtn } from '../../buttons/Buttons.jsx'
 import { tasksData } from '../main/tasks/tasksData.js'
 import styles from '../../../styles/system/createTask.module.css'
 import { useState } from 'react'
+import { TaskContext } from '../../../routes/__dashboard/route.tsx'
+import { useContext } from 'react'
 
 export default function CreateTask({ modalRef }) {
     const [validName, setValidName] = useState(true)
+    const { taskData, setTaskData } = useContext(TaskContext)
 
     function submit(formData) {
         const name = formData.get('name')
@@ -18,7 +21,7 @@ export default function CreateTask({ modalRef }) {
         }
         const newTask = { title: name, hour: time, day: day }
 
-        tasksData.push(newTask)
+        setTaskData((taskData) => [...taskData, newTask])
     }
 
     return (
