@@ -15,17 +15,17 @@ export const menuData = [
             "value": "Início"
         },
     },
-    {
-        "id": 2,
-        "img": {
-            "src": calIcon,
-            "alt": "Ícone calendário"
-        },
-        "a": {
-            "href": "/calendar",
-            "value": "Calendário"
-        },
-    },
+    // {
+    //     "id": 2,
+    //     "img": {
+    //         "src": calIcon,
+    //         "alt": "Ícone calendário"
+    //     },
+    //     "a": {
+    //         "href": "/calendar",
+    //         "value": "Calendário"
+    //     },
+    // },
     {
         "id": 3,
         "img": {
