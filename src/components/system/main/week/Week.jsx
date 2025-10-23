@@ -4,10 +4,11 @@ import Day from "./Day.jsx"
 import styles from "../../../../styles/system/week.module.css"
 
 export default function Week({ selection, setSelection }) {
-    const date = new Date()
-    const currentDay = date.getDay() // 0 = domingo
-    const currentDate = date.getDate()
 
+    // Gera os dias da semana
+    const date = new Date()
+    const currentDay = date.getDay()
+    const currentDate = date.getDate()
     const weekDays = ["D", "S", "T", "Q", "Q", "S", "S"]
 
     const daysData = Array.from({ length: 7 }, (_, i) => {
