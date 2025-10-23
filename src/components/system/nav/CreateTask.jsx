@@ -19,9 +19,6 @@ export default function CreateTask({ modalRef }) {
         const newTask = { title: name, hour: time, day: day }
 
         tasksData.push(newTask)
-
-        console.log(`\n${name}\n${time}`)
-        console.log(tasksData)
     }
 
     return (
