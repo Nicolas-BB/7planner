@@ -2,16 +2,24 @@ import notifIcon from "../../../../assets/notifIcon.png"
 import configIcon from "../../../../assets/configIcon.png"
 import Day from "./Day.jsx"
 import styles from "../../../../styles/system/week.module.css"
-import { daysData } from "./daysData.js"
 
 export default function Week({ selection, setSelection }) {
     const date = new Date()
-    const weekDay = date.getDay()
-    const dayNum = date.getDate()
+    const currentDay = date.getDay() // 0 = domingo
+    const currentDate = date.getDate()
 
-    console.log(date)
-    console.log(weekDay)
-    console.log(dayNum)
+    const weekDays = ["D", "S", "T", "Q", "Q", "S", "S"]
+
+    const daysData = Array.from({ length: 7 }, (_, i) => {
+        const day = new Date(date)
+        day.setDate(currentDate - currentDay + i)
+
+        return {
+            dayWeek: weekDays[i],
+            dayNum: day.getDate(),
+            dayWeather: "🌞"
+        }
+    })
 
     return (
         <div className={styles.container}>
