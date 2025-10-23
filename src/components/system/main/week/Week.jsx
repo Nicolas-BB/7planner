@@ -4,7 +4,6 @@ import Day from "./Day.jsx"
 import styles from "../../../../styles/system/week.module.css"
 
 export default function Week({ selection, setSelection }) {
-
     // Gera os dias da semana
     const date = new Date()
     const currentDay = date.getDay()
