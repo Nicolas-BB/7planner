@@ -7,6 +7,7 @@ import { useContext } from 'react'
 
 export default function CreateTask({ modalRef }) {
     const [validName, setValidName] = useState(true)
+    const [validDay, setValidDay] = useState(true)
     const { taskData, setTaskData } = useContext(TaskContext)
     const date = new Date()
     const today = date.getDate()
@@ -23,7 +24,13 @@ export default function CreateTask({ modalRef }) {
             )
         }
 
-        const newTask = { title: name, hour: time, day: day }
+        if (isNaN(day)) {
+            return (
+                setValidDay(false)
+            )
+        }
+
+        const newTask = { id: Date.now(), title: name, hour: time, day: day }
 
         setTaskData((taskData) => [...taskData, newTask])
     }
@@ -44,7 +51,8 @@ export default function CreateTask({ modalRef }) {
                     </label>
                     <label htmlFor="day">
                         Dia
-                        <input type="number" name="day" id="day" min={20} max={lastDay} placeholder={`${today}-${lastDay}`} autoComplete='off' />
+                        <input type="number" name="day" id="day" min={today} max={lastDay} placeholder={`${today}-${lastDay}`} autoComplete='off' />
+                        {validDay ? null : <span className={styles.validDay}>Insira um dia válido!</span>}
                     </label>
                     <PrimaryBtn>Criar</PrimaryBtn>
                 </form>

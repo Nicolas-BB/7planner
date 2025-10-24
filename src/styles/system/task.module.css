@@ -6,6 +6,8 @@
     display: flex;
     flex-direction: row;
     gap: 32px;
+    height: fit-content;
+    width: fit-content;
 }
 
 .taskContainer:hover {
@@ -18,6 +20,7 @@
 
 .taskDiv {
     width: fit-content;
+    align-self: center;
 }
 
 .title {
@@ -28,4 +31,11 @@
 .hour {
     font: bold 22px Inter, sans-serif;
     color: var(--text-color2);
+}
+
+.day {
+    color: white;
+    align-self: center;
+    font-weight: bold;
+    font-size: 32px;
 }

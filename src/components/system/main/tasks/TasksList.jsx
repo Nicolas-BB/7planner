@@ -19,30 +19,22 @@ export default function TasksList({ selection }) {
             <div className={styles.headContainer}>
                 <div className={styles.div}>
                     <p>Suas tarefas de hoje</p>
-                    <a href="#">Ver todas</a>
+                    <a href="./tasks">Ver todas</a>
                 </div>
                 <p>{tasksQtd == 1 ? '1 tarefa' : tasksQtd == 0 || undefined ? 'Nenhuma tarefa' : `${tasksQtd} tarefas`}</p>
             </div>
             <hr />
-            {/*
-            <div className={styles.tagsDiv}>
-                {tagsData.map((tag, i) => (
-                    <Tag
-                        key={i}
-                        {...tag}
+            <section className={styles.taskList}>
+                {taskData.map((task) => (task.day == (selection)
+                    ? <Task
+                        key={task.id}
+                        {...task}
+                        onDelete={() => onDelete(task.id)}
+                        day={null}
                     />
+                    : null
                 ))}
-                <img src={plusIcon} alt="Ícone de adição" className={styles.img} />
-            </div>
-            */}
-            {taskData.map((task, i) => (task.day == (selection)
-                ? <Task
-                    key={i}
-                    {...task}
-                    onDelete={() => onDelete(i)}
-                />
-                : null
-            ))}
+            </section>
         </section>
     )
 }

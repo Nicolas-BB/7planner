@@ -15,16 +15,12 @@ export default function Prof() {
             </div>
             <section className={styles.tasksStatus}>
                 <div>
-                    <h2>Tarefas concluídas</h2>
-                    <span>4</span>
-                </div>
-                <div>
                     <h2>Tarefas pendentes</h2>
                     <span>{taskData.filter(task => task.day < today).length}</span>
                 </div>
                 <div>
                     <h2>Tarefas futuras</h2>
-                    <span>{taskData.length}</span>
+                    <span>{taskData.filter(task => task.day >= today).length}</span>
                 </div>
             </section>
         </main>

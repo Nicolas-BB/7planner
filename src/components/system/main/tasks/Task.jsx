@@ -8,6 +8,8 @@ export default function Task(props) {
                 <p className={styles.title}>{props.title}</p>
                 <span className={styles.hour}>{props.hour}</span>
             </div>
+            <hr />
+            <span className={styles.day}>{props.day}</span>
         </article>
     )
 }
