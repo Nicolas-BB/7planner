@@ -2,16 +2,19 @@ import { useState } from 'react'
 import { generateTip } from '../../../../api/gemini.js'
 import styles from '../../../../styles/system/chat.module.css'
 import Markdown from 'react-markdown'
+import { TaskContext } from '../../../../routes/__dashboard/route.js'
+import { useContext } from 'react'
 
 export default function Chat() {
     const [chat, setChat] = useState({ user: '', model: '' })
     const [isLoading, setIsLoading] = useState(false)
+    const { taskData, setTaskData } = useContext(TaskContext)
 
     async function getTip(message) {
         setIsLoading(true)
 
         try {
-            const modelMsg = await generateTip(message)
+            const modelMsg = await generateTip(message, taskData)
             setChat(chat => ({ ...chat, model: modelMsg }))
         }
         catch {
