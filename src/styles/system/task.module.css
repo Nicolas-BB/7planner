@@ -1,12 +1,23 @@
-.taskDiv {
-    padding: 16px;
+.taskContainer {
+    padding: 16px 32px;
     background-color: var(--color1);
     border-radius: 16px;
     transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
 }
 
-.taskDiv:hover {
+.taskContainer:hover {
     transform: scale(1.01);
+}
+
+.taskContainer input {
+    width: 20px;
+}
+
+.taskDiv {
+    width: fit-content;
 }
 
 .title {
@@ -17,10 +28,4 @@
 .hour {
     font: bold 22px Inter, sans-serif;
     color: var(--text-color2);
-}
-
-.taskContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
 }

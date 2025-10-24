@@ -7,12 +7,15 @@ import plusIcon from "../../../../assets/plusIcon.png"
 import { useContext } from "react"
 
 export default function TasksList({ selection }) {
-    const { taskData } = useContext(TaskContext)
-    console.log(taskData)
+    const { taskData, setTaskData } = useContext(TaskContext)
     const tasksQtd = taskData.filter(task => task.day == selection).length
 
+    function onDelete(index) {
+        setTaskData(taskData => taskData.filter((_, i) => i !== index))
+    }
+
     return (
-        <div className={styles.container}>
+        <section className={styles.container}>
             <div className={styles.headContainer}>
                 <div className={styles.div}>
                     <p>Suas tarefas de hoje</p>
@@ -35,10 +38,12 @@ export default function TasksList({ selection }) {
             {taskData.map((task, i) => (task.day == (selection)
                 ? <Task
                     key={i}
+                    // i={i}
                     {...task}
+                    onDelete={() => onDelete(i)}
                 />
                 : null
             ))}
-        </div>
+        </section>
     )
 }

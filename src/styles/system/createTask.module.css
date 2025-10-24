@@ -51,7 +51,8 @@
     border: 2px var(--primary-color-1) solid;
 }
 
-.validName {
+.validName,
+.validDate {
     color: rgb(255, 110, 110);
     text-align: center;
 }

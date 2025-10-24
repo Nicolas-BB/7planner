@@ -19,6 +19,7 @@ export default function CreateTask({ modalRef }) {
                 setValidName(false)
             )
         }
+
         const newTask = { title: name, hour: time, day: day }
 
         setTaskData((taskData) => [...taskData, newTask])
