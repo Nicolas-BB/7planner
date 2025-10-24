@@ -44,7 +44,7 @@ export default function CreateTask({ modalRef }) {
                     </label>
                     <label htmlFor="day">
                         Dia
-                        <input type="number" name="day" id="day" min={today} max={lastDay} placeholder={`${today}-${lastDay}`} autoComplete='off' />
+                        <input type="number" name="day" id="day" min={20} max={lastDay} placeholder={`${today}-${lastDay}`} autoComplete='off' />
                     </label>
                     <PrimaryBtn>Criar</PrimaryBtn>
                 </form>

@@ -38,7 +38,6 @@ export default function TasksList({ selection }) {
             {taskData.map((task, i) => (task.day == (selection)
                 ? <Task
                     key={i}
-                    // i={i}
                     {...task}
                     onDelete={() => onDelete(i)}
                 />

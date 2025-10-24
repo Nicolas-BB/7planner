@@ -2,6 +2,7 @@ import houseIcon from "../../../assets/houseIcon.png"
 import calIcon from "../../../assets/calIcon.png"
 import assisIcon from "../../../assets/assisIcon.png"
 import profileIcon from "../../../assets/profileIcon.png"
+import tasks from "../../../assets/tasks.png"
 
 export const menuData = [
     {
@@ -14,6 +15,17 @@ export const menuData = [
             "href": "/",
             "value": "Início"
         },
+    },
+    {
+        "id": 2,
+        "img": {
+            "src": tasks,
+            "alt": "Ícone de tarefa"
+        },
+        "a": {
+            "href": "/tasks",
+            "value": "Tarefas"
+        }
     },
     // {
     //     "id": 2,

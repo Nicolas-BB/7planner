@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as LandingRouteImport } from './routes/landing'
 import { Route as _dashboardRouteRouteImport } from './routes/__dashboard/route'
 import { Route as _dashboardIndexRouteImport } from './routes/__dashboard/index'
+import { Route as _dashboardTasksRouteImport } from './routes/__dashboard/tasks'
 import { Route as _dashboardProfileRouteImport } from './routes/__dashboard/profile'
 import { Route as _dashboardCalendarRouteImport } from './routes/__dashboard/calendar'
 import { Route as _dashboardAssistantRouteImport } from './routes/__dashboard/assistant'
@@ -28,6 +29,11 @@ const _dashboardRouteRoute = _dashboardRouteRouteImport.update({
 const _dashboardIndexRoute = _dashboardIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => _dashboardRouteRoute,
+} as any)
+const _dashboardTasksRoute = _dashboardTasksRouteImport.update({
+  id: '/tasks',
+  path: '/tasks',
   getParentRoute: () => _dashboardRouteRoute,
 } as any)
 const _dashboardProfileRoute = _dashboardProfileRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/assistant': typeof _dashboardAssistantRoute
   '/calendar': typeof _dashboardCalendarRoute
   '/profile': typeof _dashboardProfileRoute
+  '/tasks': typeof _dashboardTasksRoute
   '/': typeof _dashboardIndexRoute
 }
 export interface FileRoutesByTo {
@@ -58,6 +65,7 @@ export interface FileRoutesByTo {
   '/assistant': typeof _dashboardAssistantRoute
   '/calendar': typeof _dashboardCalendarRoute
   '/profile': typeof _dashboardProfileRoute
+  '/tasks': typeof _dashboardTasksRoute
   '/': typeof _dashboardIndexRoute
 }
 export interface FileRoutesById {
@@ -67,13 +75,20 @@ export interface FileRoutesById {
   '/__dashboard/assistant': typeof _dashboardAssistantRoute
   '/__dashboard/calendar': typeof _dashboardCalendarRoute
   '/__dashboard/profile': typeof _dashboardProfileRoute
+  '/__dashboard/tasks': typeof _dashboardTasksRoute
   '/__dashboard/': typeof _dashboardIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/landing' | '/assistant' | '/calendar' | '/profile' | '/'
+  fullPaths:
+    | '/landing'
+    | '/assistant'
+    | '/calendar'
+    | '/profile'
+    | '/tasks'
+    | '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/landing' | '/assistant' | '/calendar' | '/profile' | '/'
+  to: '/landing' | '/assistant' | '/calendar' | '/profile' | '/tasks' | '/'
   id:
     | '__root__'
     | '/__dashboard'
@@ -81,6 +96,7 @@ export interface FileRouteTypes {
     | '/__dashboard/assistant'
     | '/__dashboard/calendar'
     | '/__dashboard/profile'
+    | '/__dashboard/tasks'
     | '/__dashboard/'
   fileRoutesById: FileRoutesById
 }
@@ -112,6 +128,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof _dashboardIndexRouteImport
       parentRoute: typeof _dashboardRouteRoute
     }
+    '/__dashboard/tasks': {
+      id: '/__dashboard/tasks'
+      path: '/tasks'
+      fullPath: '/tasks'
+      preLoaderRoute: typeof _dashboardTasksRouteImport
+      parentRoute: typeof _dashboardRouteRoute
+    }
     '/__dashboard/profile': {
       id: '/__dashboard/profile'
       path: '/profile'
@@ -140,6 +163,7 @@ interface _dashboardRouteRouteChildren {
   _dashboardAssistantRoute: typeof _dashboardAssistantRoute
   _dashboardCalendarRoute: typeof _dashboardCalendarRoute
   _dashboardProfileRoute: typeof _dashboardProfileRoute
+  _dashboardTasksRoute: typeof _dashboardTasksRoute
   _dashboardIndexRoute: typeof _dashboardIndexRoute
 }
 
@@ -147,6 +171,7 @@ const _dashboardRouteRouteChildren: _dashboardRouteRouteChildren = {
   _dashboardAssistantRoute: _dashboardAssistantRoute,
   _dashboardCalendarRoute: _dashboardCalendarRoute,
   _dashboardProfileRoute: _dashboardProfileRoute,
+  _dashboardTasksRoute: _dashboardTasksRoute,
   _dashboardIndexRoute: _dashboardIndexRoute,
 }
 
