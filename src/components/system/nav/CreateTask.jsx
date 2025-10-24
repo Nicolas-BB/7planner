@@ -8,6 +8,9 @@ import { useContext } from 'react'
 export default function CreateTask({ modalRef }) {
     const [validName, setValidName] = useState(true)
     const { taskData, setTaskData } = useContext(TaskContext)
+    const date = new Date()
+    const today = date.getDate()
+    const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()
 
     function submit(formData) {
         const name = formData.get('name')
@@ -35,13 +38,13 @@ export default function CreateTask({ modalRef }) {
                         <input type="text" name="name" id="name" placeholder='Estudar' autoComplete='off' />
                         {validName ? null : <span className={styles.validName}>Insira um nome válido!</span>}
                     </label>
-                    <label htmlFor="hour">
+                    <label htmlFor="time">
                         Horário
                         <input type="time" name="time" id="time" autoComplete='off' />
                     </label>
-                    <label htmlFor="hour">
+                    <label htmlFor="day">
                         Dia
-                        <input type="number" name="day" id="day" min={1} max={31} placeholder='1-31' autoComplete='off' />
+                        <input type="number" name="day" id="day" min={today} max={lastDay} placeholder={`${today}-${lastDay}`} autoComplete='off' />
                     </label>
                     <PrimaryBtn>Criar</PrimaryBtn>
                 </form>
