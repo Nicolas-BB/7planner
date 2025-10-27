@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .main {
     display: flex;
     flex-direction: column;
@@ -5,6 +9,7 @@
 
 .main h2 {
     color: var(--text-color1);
+
 }
 
 .main p {
@@ -34,7 +39,6 @@
     flex-direction: column;
     width: 370px;
     gap: 16px;
-    margin-left: 200px;
 }
 
 .heroDiv h1 {
@@ -88,4 +92,43 @@
 
 .infoDiv img {
     max-height: 200px;
+}
+
+.tagsSection,
+.geminiSection {
+    animation: lSlide 1s ease-in;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+
+.weekSection {
+    animation: rSlide 1s ease-in;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+
+@keyframes lSlide {
+    from {
+        transform: translateX(-100dvw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes rSlide {
+    from {
+        transform: translateX(100dvw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .herocontainer {
+        height: 100%;
+    }
 }
