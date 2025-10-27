@@ -60,3 +60,19 @@
     flex-direction: column;
     gap: 32px;
 }
+
+@media (max-width: 756px) {
+    .containerDiv {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .linksContainer {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo {
+        height: 34px;
+    }
+}

@@ -5,6 +5,7 @@
 }
 
 .ul {
+    width: fit-content;
     position: absolute;
     left: 50%;
     right: 50%;
@@ -29,4 +30,42 @@
     padding: 10px 20px;
     border: 2px var(--text-color1) solid;
     border-radius: 100px;
+}
+
+.menuBtn {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: var(--text-color1);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .header {
+        justify-content: space-between;
+        padding: 16px 24px;
+    }
+
+    .menuBtn {
+        display: block;
+        align-self: flex-end;
+    }
+
+    .ul {
+        display: none;
+        flex-direction: column;
+        gap: 32px;
+        margin-top: 12px;
+        left: unset;
+        right: 0;
+        top: 70px;
+        background-color: black;
+        padding: 30px;
+        border-radius: 16px;
+    }
+
+    .showMenu {
+        display: flex;
+    }
 }

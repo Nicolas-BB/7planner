@@ -1,10 +1,7 @@
-html {
-    scroll-behavior: smooth;
-}
-
 .main {
     display: flex;
     flex-direction: column;
+    /* overflow-x: hidden; */
 }
 
 .main h2 {
@@ -127,8 +124,17 @@ html {
     }
 }
 
-@media (max-width: 768px) {
-    .herocontainer {
-        height: 100%;
+@media (max-width: 756px) {
+
+    .tagsSection,
+    .geminiSection,
+    .weekSection {
+        animation-range: entry 0% cover 30%;
+    }
+
+    .heroSection {
+        align-items: unset;
+        justify-content: center;
+        padding: 100px 0px;
     }
 }
