@@ -87,50 +87,25 @@
     text-align: center;
 }
 
+.infoDiv h2 {
+    font-size: 32px;
+}
+
+.infoDiv p {
+    font-size: 24px;
+}
+
 .infoDiv img {
     max-height: 200px;
 }
 
-.tagsSection,
-.geminiSection {
-    animation: lSlide 1s ease-in;
-    animation-timeline: view();
-    animation-range: entry 0% cover 50%;
-}
-
-.weekSection {
-    animation: rSlide 1s ease-in;
-    animation-timeline: view();
-    animation-range: entry 0% cover 50%;
-}
-
-@keyframes lSlide {
-    from {
-        transform: translateX(-100dvw);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes rSlide {
-    from {
-        transform: translateX(100dvw);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
 @media (max-width: 756px) {
 
+    .downloadSection,
     .tagsSection,
     .geminiSection,
     .weekSection {
         padding: 100px 10px;
-        animation-range: entry 0% cover 30%;
     }
 
     .heroSection {
