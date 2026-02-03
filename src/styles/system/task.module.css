@@ -1,0 +1,41 @@
+.taskContainer {
+    padding: 16px 32px;
+    background-color: var(--color1);
+    border-radius: 16px;
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.taskContainer:hover {
+    transform: scale(1.01);
+}
+
+.taskContainer input {
+    width: 20px;
+}
+
+.taskDiv {
+    width: fit-content;
+    align-self: center;
+}
+
+.title {
+    color: var(--text-color1);
+    font: bold 26px Inter, sans-serif;
+}
+
+.hour {
+    font: bold 22px Inter, sans-serif;
+    color: var(--text-color2);
+}
+
+.day {
+    color: white;
+    align-self: center;
+    font-weight: bold;
+    font-size: 32px;
+}

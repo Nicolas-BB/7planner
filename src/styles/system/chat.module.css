@@ -1,0 +1,124 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div {
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    gap: 10px;
+}
+
+.messages {
+    width: 100%;
+    height: 100%;
+    overflow: y;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    overflow-y: scroll;
+    scrollbar-color: hsl(0, 0%, 30%) transparent;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+}
+
+.form input {
+    all: unset;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background-color: hsl(0, 0%, 30%);
+    border: 4px transparent solid;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+.form input::placeholder {
+    color: hsl(0, 0%, 80%);
+}
+
+.form input:focus {
+    border: 4px var(--primary-color-1) solid;
+}
+
+.message span {
+    display: flex;
+    flex-direction: column;
+}
+
+.userMsg {
+    max-width: 600px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: 16px;
+    background-color: var(--primary-color-1);
+}
+
+.modelMsg li {
+    margin-left: 16px;
+}
+
+.modelMsg {
+    max-width: 600px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: 16px;
+}
+
+.modelMsg * {
+    margin: 10px 0px;
+}
+
+.messages div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.userDiv {
+    align-self: flex-end;
+}
+
+.modelDiv {
+    align-self: flex-start;
+}
+
+.loading {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 100%;
+    animation: loop .5s infinite ease-in-out alternate;
+}
+
+@keyframes loop {
+    from {
+        transform: translateX(-10px);
+    }
+
+    to {
+        transform: translateX(10px);
+    }
+}

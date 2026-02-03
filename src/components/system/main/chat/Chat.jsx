@@ -1,0 +1,70 @@
+import { useState } from 'react'
+import { generateTip } from '../../../../api/gemini.js'
+import styles from '../../../../styles/system/chat.module.css'
+import Markdown from 'react-markdown'
+import { TaskContext } from '../../../../routes/__dashboard/route.js'
+import { useContext } from 'react'
+
+export default function Chat() {
+    const [chat, setChat] = useState({ user: '', model: '' })
+    const [isLoading, setIsLoading] = useState(false)
+    const { taskData, setTaskData } = useContext(TaskContext)
+
+    async function getTip(message) {
+        setIsLoading(true)
+
+        try {
+            const modelMsg = await generateTip(message, taskData)
+            setChat(chat => ({ ...chat, model: modelMsg }))
+        }
+        catch {
+            setChat(chat => ({ ...chat, model: 'Ocorreu um erro' }))
+        }
+        finally {
+            setIsLoading(false)
+        }
+    }
+
+    function submit(formData) {
+        const message = formData.get('message')
+
+        if (message.trim().length > 0) {
+            setChat(chat => ({ user: message.trim(), model: '' }))
+            getTip(message)
+        }
+    }
+
+    return (
+        <div className={styles.container}>
+            <div className={styles.div}>
+                <div className={styles.messages}>
+                    {
+                        chat.user.length > 0 &&
+                        <div className={styles.userDiv}>
+                            <span>Você</span>
+                            <span className={styles.userMsg}>
+                                {chat.user}
+                            </span>
+                        </div>
+                    }
+                    {
+                        (chat.model.length > 0 || isLoading) &&
+                        <div className={styles.modelDiv}>
+                            <span>Assistente</span>
+                            <span className={styles.modelMsg}>
+                                {
+                                    isLoading
+                                        ? <div className={styles.loading}></div>
+                                        : <Markdown>{chat.model}</Markdown>
+                                }
+                            </span>
+                        </div>
+                    }
+                </div>
+                <form className={styles.form} action={submit}>
+                    <input type="text" name="message" id="message" placeholder="Pergunte ao assistente..." autoComplete='off' />
+                </form>
+            </div>
+        </div>
+    )
+}

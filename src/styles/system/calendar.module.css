@@ -1,0 +1,44 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    background: var(--color2);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    padding: auto;
+    box-shadow: 0 0 10px black;
+    height: fit-content;
+    font-size: 24px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.weekday {
+    font-weight: bold;
+    color: white;
+}
+
+.day {
+    padding: 10px;
+    border-radius: 5px;
+    background: var(--color1);
+    color: white;
+}
+
+.today {
+    background: var(--primary-color-1);
+    color: white;
+    font-weight: bold;
+}

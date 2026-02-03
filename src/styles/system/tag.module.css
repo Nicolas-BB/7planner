@@ -1,0 +1,13 @@
+.div {
+    display: flex;
+    color: var(--text-color1);
+    background-color: var(--color1);
+    padding: 4px 8px;
+    border-radius: 100px;
+    font: bold 16px Inter, sans-serif;
+}
+
+.tagsContainer {
+    display: flex;
+    gap: 8px;
+}

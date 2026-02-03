@@ -1,1 +1,1 @@
-# sevenday-planner
+# 7planner
